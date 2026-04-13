@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login — LFI Cars</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="login-page">
+
+  <div class="login-box">
+    <h1>LFI Cars</h1>
+    <p class="login-sub">Faça login para continuar</p>
+
+    <form id="login-form">
+      <div class="field">
+        <label for="usuario">Usuário</label>
+        <input type="text" id="usuario" placeholder="Digite seu usuário" />
+        <span class="erro" id="erro-usuario"></span>
+      </div>
+
+      <div class="field">
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" placeholder="Digite sua senha" />
+        <span class="erro" id="erro-senha"></span>
+      </div>
+
+      <button type="submit" class="btn-primary">Entrar</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

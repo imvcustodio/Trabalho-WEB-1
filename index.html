@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LFI Cars</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header carregado via fetch assíncrono -->
+  <div id="header-container"></div>
+
+  <main class="container">
+
+    <!-- FORMULÁRIO -->
+    <section class="card">
+      <h2 id="form-titulo">Cadastrar Veículo</h2>
+
+      <form id="form-veiculo">
+        <div class="field">
+          <label for="modelo">Modelo</label>
+          <input type="text" id="modelo" placeholder="Ex: Civic 2024" />
+        </div>
+
+        <div class="field">
+          <label for="preco">Preço (R$)</label>
+          <input type="number" id="preco" placeholder="Ex: 150000" />
+        </div>
+
+        <div class="field">
+          <label for="ano">Ano</label>
+          <input type="number" id="ano" placeholder="Ex: 2024" />
+        </div>
+
+        <div class="form-btns">
+          <button type="submit" class="btn-primary" id="btn-submit">Cadastrar</button>
+          <button type="button" class="btn-secondary" id="btn-cancelar" style="display:none" onclick="cancelarEdicao()">Cancelar</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- TABELA -->
+    <section class="card">
+      <h2>Veículos Cadastrados</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Modelo</th>
+            <th>Preço</th>
+            <th>Ano</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody id="tabela-body">
+          <!-- linhas geradas pelo JS -->
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <!-- Footer carregado via fetch assíncrono -->
+  <div id="footer-container"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
