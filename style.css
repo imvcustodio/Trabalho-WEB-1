@@ -1,0 +1,225 @@
+/* =============================================
+   RESET E BASE
+============================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f2f5;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main.container {
+  flex: 1;
+}
+
+/* Header → header.css | Footer → footer.css */
+
+/* =============================================
+   CONTAINER PRINCIPAL
+============================================= */
+.container {
+  max-width: 800px;
+  margin: 32px auto;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* =============================================
+   CARD
+============================================= */
+.card {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.card h2 {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  color: #1a1a2e;
+  border-bottom: 2px solid #e94560;
+  padding-bottom: 8px;
+}
+
+/* =============================================
+   FORMULÁRIO
+============================================= */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.field label {
+  font-size: 0.875rem;
+  font-weight: bold;
+  color: #555;
+}
+
+.field input,
+.field select {
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  transition: border-color 0.2s;
+}
+
+.field input:focus,
+.field select:focus {
+  outline: none;
+  border-color: #e94560;
+}
+
+.erro {
+  color: #e94560;
+  font-size: 0.8rem;
+}
+
+.form-btns {
+  display: flex;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.btn-primary {
+  background: #e94560;
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.btn-primary:hover {
+  background: #c73652;
+}
+
+.btn-secondary {
+  background: #eee;
+  color: #333;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.btn-secondary:hover {
+  background: #ddd;
+}
+
+/* =============================================
+   TABELA
+============================================= */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+thead th {
+  background: #1a1a2e;
+  color: white;
+  padding: 10px 14px;
+  text-align: left;
+  font-weight: normal;
+}
+
+tbody tr {
+  border-bottom: 1px solid #eee;
+}
+
+tbody tr:hover {
+  background: #f9f9f9;
+}
+
+tbody td {
+  padding: 10px 14px;
+}
+
+.btn-editar,
+.btn-excluir {
+  border: none;
+  padding: 5px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  margin-right: 6px;
+}
+
+.btn-editar {
+  background: #3498db;
+  color: white;
+}
+
+.btn-editar:hover {
+  background: #2980b9;
+}
+
+.btn-excluir {
+  background: #e74c3c;
+  color: white;
+}
+
+.btn-excluir:hover {
+  background: #c0392b;
+}
+
+.sem-dados {
+  text-align: center;
+  color: #aaa;
+  padding: 20px;
+}
+
+/* =============================================
+   LOGIN
+============================================= */
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #1a1a2e;
+}
+
+.login-box {
+  background: white;
+  padding: 40px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 380px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.login-box h1 {
+  text-align: center;
+  color: #e94560;
+  margin-bottom: 6px;
+  font-size: 1.8rem;
+}
+
+.login-sub {
+  text-align: center;
+  color: #888;
+  margin-bottom: 28px;
+  font-size: 0.9rem;
+}
+
+.login-box .btn-primary {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+}
