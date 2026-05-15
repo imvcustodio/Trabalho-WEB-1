@@ -1,0 +1,131 @@
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a1a2e;
+    /* Fundo padrão do projeto */
+    color: #ffffff;
+    padding: 15px 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    font-family: Arial, sans-serif;
+}
+
+.header-logo a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #e94560;
+}
+
+.header-logo img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.header-nav>ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header-nav>ul>li {
+    position: relative;
+    padding: 10px 0;
+}
+
+.header-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.header-nav a:hover {
+    color: #e94560;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #1a1a2e;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-width: 180px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 0 0 6px 6px;
+    z-index: 100;
+}
+
+.submenu li {
+    width: 100%;
+}
+
+.submenu a {
+    display: block;
+    padding: 12px 16px;
+    font-weight: normal;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.submenu a:hover {
+    background-color: #e94560;
+    color: #ffffff;
+}
+
+.header-nav>ul>li:hover .submenu {
+    display: block;
+}
+
+.header-auth {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header-auth img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #e94560;
+    object-fit: cover;
+}
+
+.header-auth span {
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.btn-sair {
+    background-color: transparent;
+    color: #e94560;
+    border: 1px solid #e94560;
+    padding: 6px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-sair:hover {
+    background-color: #e94560;
+    color: #ffffff;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+}
