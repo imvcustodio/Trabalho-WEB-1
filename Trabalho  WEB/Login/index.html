@@ -28,9 +28,18 @@
             ></a>
           </div>
           <span>Ou use o seu email para se registrar</span>
-          <input type="text" placeholder="Nome" />
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Senha" />
+          <div class="text-field">
+            <input type="text" id="signup-name" placeholder=" " />
+            <label for="signup-name">Nome</label>
+          </div>
+          <div class="text-field">
+            <input type="email" id="signup-email" placeholder=" " />
+            <label for="signup-email">Email</label>
+          </div>
+          <div class="text-field">
+            <input type="password" id="signup-password" placeholder=" " />
+            <label for="signup-password">Senha</label>
+          </div>
           <button>Cadastrar-se</button>
         </form>
       </div>
@@ -48,8 +57,18 @@
             ></a>
           </div>
           <span>ou use a senha do seu email</span>
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Senha" />
+          <div class="text-field">
+            <input type="email" id="signin-email" placeholder=" " />
+            <label for="signin-email">Email</label>
+          </div>
+          <div class="text-field">
+            <input type="password" id="signin-password" placeholder=" " />
+            <label for="signin-password">Senha</label>
+          </div>
+          <div class="remember-me">
+            <input type="checkbox" id="remember" />
+            <label for="remember">Lembrar senha</label>
+          </div>
           <a href="#">esqueceu a Sua senha?</a>
           <button>Entrar</button>
         </form>

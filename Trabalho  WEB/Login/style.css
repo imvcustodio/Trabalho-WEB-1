@@ -75,15 +75,84 @@ body {
   height: 100%;
 }
 
-.container input {
-  background-color: #eee;
-  border: none;
+/* Material Design 3 - Filled text field */
+.text-field {
+  position: relative;
+  width: 100%;
   margin: 8px 0;
-  padding: 10px 15px;
-  font-size: 13px;
-  border-radius: 8px;
+}
+
+.container input {
+  background-color: #ece6e6; /* surface-container-highest */
+  border: none;
+  border-bottom: 1px solid #79747e; /* active indicator (resting) */
+  /* espaço extra no topo para o label flutuante */
+  padding: 20px 16px 6px;
+  font-size: 14px;
+  color: #1d1b20; /* on-surface */
+  border-radius: 4px 4px 0 0; /* cantos arredondados só no topo */
   width: 100%;
   outline: none;
+  transition: background-color 0.15s ease, border-bottom-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.container input:hover {
+  background-color: #e3dcdc;
+}
+
+.container input:focus {
+  background-color: #e3dcdc;
+  border-bottom-color: #df0000; /* primary */
+  /* indicador ativo de 2px no foco, sem deslocar o layout */
+  box-shadow: inset 0 -1px 0 0 #df0000;
+}
+
+/* Label flutuante */
+.text-field label {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #49454f; /* on-surface-variant */
+  font-size: 14px;
+  pointer-events: none;
+  transition: top 0.15s ease, font-size 0.15s ease, color 0.15s ease,
+    transform 0.15s ease;
+}
+
+/* Sobe o label quando o campo está em foco ou preenchido */
+.text-field input:focus + label,
+.text-field input:not(:placeholder-shown) + label {
+  top: 7px;
+  transform: translateY(0);
+  font-size: 11px;
+}
+
+.text-field input:focus + label {
+  color: #df0000; /* primary */
+}
+
+/* Checkbox "Lembrar senha" - Material Design */
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  margin: 12px 0 4px;
+}
+
+.remember-me input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #df0000; /* primary */
+  cursor: pointer;
+}
+
+.remember-me label {
+  color: #333;
+  font-size: 13px;
+  cursor: pointer;
 }
 
 .form-container {
@@ -159,7 +228,7 @@ body {
 
 .container.active .toggle-container {
   transform: translateX(-100%);
-  border-radius: 0 150px 100px 0;
+  border-radius: 0 100px 100px 0;
 }
 
 .toggle {
