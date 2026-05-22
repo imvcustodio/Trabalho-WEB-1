@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;  
+}
+
+.side-bar {
+    width: 300px;
+    height: 100vh; /*deve ocupar toda a tela verticalmente*/
+    background-color: #313131;
+    color: white;
+
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    border-radius: 16px;
+    padding: 10px 22px;
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    
+}
+
+.side-bar h2 {
+    font-family: 'Poppins';
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.logo {
+    width: 280px;
+    height: auto;
+    padding: 20px;
+}
+
+nav {
+    border-bottom: 1px solid white;
+    padding-bottom: 10px;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    margin-bottom: 10px;
+}
+
+nav ul li a {
+    width: 280px;
+    height: 44px;
+    padding: 10px 7px;
+    gap: 10px;
+    align-items: center;
+    color: white; /*colocar os icons dps*/
+    text-decoration: none;
+    display: flex;
+    border: 1px solid white;
+    border-radius: 8px;
+}
+
+nav ul li i {
+    font-size: 20px;
+    text-align: center;
+}
+
+.arrow {
+    margin-left: auto;
+}
+
+.arrow i {
+    font-size: 16px;
+    border: 1px solid white;
+    border-radius: 16px;
+    padding: 4px;
+    transition: transform 0.5s ease;
+}
+
+.dropdown-navbar input:checked + .dropdown-btn .arrow i {
+    transform: rotate(180deg);
+}
+
+
+.dropdown-navbar input {
+    display: none;
+}
+
+.dropdown-navbar input:checked ~ .sub-menu {
+    border: 1px solid white;
+    max-height: 200px;
+}
+
+.dropdown-btn {
+    width: 280px;
+    height: 44px;
+    padding: 10px 7px;
+    gap: 10px;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    border: 1px solid white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.sub-menu {
+    list-style: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    border-radius: 8px;
+}
+
+.sub-menu li {
+    margin: 10px 7px;
+}
+
+.sub-menu li a {
+    width: 260px;
+    height: 36px;
+    padding: 10px 7px;
+    font-size: 18px;
+}
+
+nav ul li a:hover, .dropdown-btn:hover {
+    background-color: #212121;
+    transition: 0.2s;
+}
