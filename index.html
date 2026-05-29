@@ -4,9 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LFI Cars</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+  <!-- Navbar (sidebar) carregada via fetch assíncrono -->
+  <div id="navbar-container"></div>
 
   <!-- Header carregado via fetch assíncrono -->
   <div id="header-container"></div>
@@ -17,20 +21,43 @@
     <section class="card">
       <h2 id="form-titulo">Cadastrar Veículo</h2>
 
-      <form id="form-veiculo">
+      <form id="form-veiculo" novalidate>
         <div class="field">
+          <input type="text" id="modelo" placeholder=" " />
           <label for="modelo">Modelo</label>
-          <input type="text" id="modelo" placeholder="Ex: Civic 2024" />
+          <span class="erro" id="erro-modelo"></span>
         </div>
 
         <div class="field">
+          <input type="text" id="marca" placeholder=" " />
+          <label for="marca">Marca</label>
+          <span class="erro" id="erro-marca"></span>
+        </div>
+
+        <div class="field">
+          <input type="number" id="preco" placeholder=" " />
           <label for="preco">Preço (R$)</label>
-          <input type="number" id="preco" placeholder="Ex: 150000" />
+          <span class="erro" id="erro-preco"></span>
         </div>
 
         <div class="field">
+          <input type="number" id="ano" placeholder=" " />
           <label for="ano">Ano</label>
-          <input type="number" id="ano" placeholder="Ex: 2024" />
+          <span class="erro" id="erro-ano"></span>
+        </div>
+
+        <div class="field">
+          <select id="combustivel">
+            <option value="">Selecione...</option>
+            <option value="Gasolina">Gasolina</option>
+            <option value="Etanol">Etanol</option>
+            <option value="Flex">Flex</option>
+            <option value="Diesel">Diesel</option>
+            <option value="Elétrico">Elétrico</option>
+            <option value="Híbrido">Híbrido</option>
+          </select>
+          <label for="combustivel">Combustível</label>
+          <span class="erro" id="erro-combustivel"></span>
         </div>
 
         <div class="form-btns">
@@ -40,22 +67,55 @@
       </form>
     </section>
 
-    <!-- TABELA -->
+    <!-- TABELA (Material Design 2 - Data Table) -->
     <section class="card">
       <h2>Veículos Cadastrados</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Modelo</th>
-            <th>Preço</th>
-            <th>Ano</th>
-            <th>Ações</th>
-          </tr>
-        </thead>
-        <tbody id="tabela-body">
-          <!-- linhas geradas pelo JS -->
-        </tbody>
-      </table>
+
+      <div class="data-table-container">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th class="col-checkbox">
+                <input type="checkbox" id="check-all" class="row-checkbox" />
+              </th>
+              <th class="sortable" data-coluna="modelo">
+                Modelo <span class="sort-arrow"></span>
+              </th>
+              <th class="sortable" data-coluna="marca">
+                Marca <span class="sort-arrow"></span>
+              </th>
+              <th class="sortable" data-coluna="preco">
+                Preço <span class="sort-arrow"></span>
+              </th>
+              <th class="sortable" data-coluna="ano">
+                Ano <span class="sort-arrow"></span>
+              </th>
+              <th class="sortable" data-coluna="combustivel">
+                Combustível <span class="sort-arrow"></span>
+              </th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="tabela-body">
+            <!-- linhas geradas pelo JS -->
+          </tbody>
+        </table>
+
+        <!-- Paginação MD2 -->
+        <div class="pagination">
+          <span class="rows-per-page-label">Linhas por página:</span>
+          <select id="rows-per-page" class="rows-select">
+            <option value="5" selected>5</option>
+            <option value="10">10</option>
+            <option value="25">25</option>
+          </select>
+
+          <span class="page-info" id="page-info">0–0 de 0</span>
+
+          <button type="button" class="page-btn" id="btn-prev" aria-label="Página anterior">‹</button>
+          <button type="button" class="page-btn" id="btn-next" aria-label="Próxima página">›</button>
+        </div>
+      </div>
     </section>
 
   </main>
