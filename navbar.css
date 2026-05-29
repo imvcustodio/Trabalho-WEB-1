@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+
+/* =============================================
+   Navigation Drawer (Material Design 3)
+   ---------------------------------------------
+   Tokens (tema escuro):
+   - surface              #1f1f1f  -> fundo do drawer
+   - on-surface           #e6e1e5  -> texto/ícone principal
+   - on-surface-variant   #cac4d0  -> texto secundário (headers)
+   - primary              #e94560  -> cor do projeto
+   - secondary-container  rgba(233,69,96,.16) -> fundo do item ativo
+   - state layer hover    rgba(255,255,255,.08)
+============================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+/* ---------- Container do drawer ---------- */
+.side-bar {
+  width: 300px;
+  height: calc(100vh - 20px);
+  background-color: #1f1f1f;
+  color: #e6e1e5;
+
+  position: fixed;
+  left: 10px;
+  top: 10px;
+  border-radius: 16px;
+  padding: 12px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  /* Elevation level 1 (MD3) */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3),
+              0 1px 3px 1px rgba(0, 0, 0, 0.15);
+}
+
+/* ---------- Logo ---------- */
+.logo {
+  width: 100%;
+  height: auto;
+  padding: 16px 12px 24px;
+  align-self: center;
+  max-width: 220px;
+}
+
+/* ---------- Section header (overline MD3) ---------- */
+.side-bar h2 {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #cac4d0;
+  padding: 16px 16px 8px;
+}
+
+/* ---------- Divider entre seções ---------- */
+nav {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  padding-bottom: 8px;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  margin-bottom: 4px;
+}
+
+/* ---------- Item de navegação (pill 56dp / 28dp radius) ---------- */
+nav ul li a,
+.dropdown-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  width: 100%;
+  height: 56px;
+  padding: 0 24px 0 16px;
+
+  color: #e6e1e5;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+
+  border: none;
+  border-radius: 28px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+/* Ícones em 24dp */
+nav ul li i {
+  font-size: 20px;
+  width: 24px;
+  text-align: center;
+}
+
+/* ---------- State layer: hover ---------- */
+nav ul li a:hover,
+.dropdown-btn:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ---------- State layer: focus/active (visual press) ---------- */
+nav ul li a:focus-visible,
+.dropdown-btn:focus-visible {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+/* ---------- Item ativo (selected) ---------- */
+nav ul li a.active {
+  background-color: rgba(233, 69, 96, 0.16);
+  color: #e94560;
+}
+
+nav ul li a.active i {
+  color: #e94560;
+}
+
+/* ---------- Seta do dropdown ---------- */
+.arrow {
+  margin-left: auto;
+}
+
+.arrow i {
+  font-size: 16px;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  transition: transform 0.25s ease;
+}
+
+.dropdown-navbar input:checked + .dropdown-btn .arrow i {
+  transform: rotate(180deg);
+}
+
+/* Esconde o checkbox que controla o estado do dropdown */
+.dropdown-navbar input {
+  display: none;
+}
+
+/* ---------- Sub-menu (expansível) ---------- */
+.sub-menu {
+  list-style: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  padding-left: 24px;          /* indenta para indicar hierarquia */
+}
+
+.dropdown-navbar input:checked ~ .sub-menu {
+  max-height: 240px;
+}
+
+.sub-menu li {
+  margin: 2px 0;
+}
+
+.sub-menu li a {
+  width: 100%;
+  height: 48px;                 /* sub-itens um pouco menores */
+  padding: 0 16px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #cac4d0;
+}
+
+.sub-menu li a:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #e6e1e5;
+}
